@@ -1,3 +1,3 @@
-# flutter_application_1
+# Flutter Dart Portfolio App
 
-A new Flutter project.
+In this  I am developing a flutter mobile app for my portfolio.
