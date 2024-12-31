@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'skillline.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My Flutter App',
+      title: 'TM Sachith Portfolio',
       home: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
@@ -44,25 +46,94 @@ class MyApp extends StatelessWidget {
                     children: [
                       IconButton(
                         icon: const Icon(Icons.facebook, color: Colors.white),
-                        onPressed: () {
-                          // Add your onPressed code here!
+                        onPressed: () async {
+                          const url = 'https://www.facebook.com';
+                          // ignore: deprecated_member_use
+                          if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
                         },
                       ),
                       IconButton(
-                        icon: const Icon(Icons.alternate_email,
+                        icon: const Icon(Icons.email,
                             color: Colors
                                 .white), // Replace with an appropriate icon
-                        onPressed: () {
-                          // Add your onPressed code here!
+                        onPressed: () async {
+                          const url = 'https://www.facebook.com';
+                          // ignore: deprecated_member_use
+                          if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
                         },
                       ),
                       IconButton(
                         icon: const Icon(
-                          Icons.camera,
+                          FontAwesomeIcons.instagram,
                           color: Colors.white,
                         ),
-                        onPressed: () {
-                          // Add your onPressed code here!
+                        onPressed: () async {
+                          const url = 'https://www.instagram.com/tmsachith/';
+                          // ignore: deprecated_member_use
+                          if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(
+                          FontAwesomeIcons.xTwitter,
+                          color: Colors.white,
+                        ),
+                        onPressed: () async {
+                          const url = 'https://www.facebook.com';
+                          // ignore: deprecated_member_use
+                          if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(
+                          FontAwesomeIcons.github,
+                          color: Colors.white,
+                        ),
+                        onPressed: () async {
+                          const url = 'https://www.facebook.com';
+                          // ignore: deprecated_member_use
+                          if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                      ),
+                      IconButton(
+                        icon: const Icon(
+                          FontAwesomeIcons.linkedin,
+                          color: Colors.white,
+                        ),
+                        onPressed: () async {
+                          const url = 'https://www.facebook.com';
+                          // ignore: deprecated_member_use
+                          if (await canLaunch(url)) {
+                            // ignore: deprecated_member_use
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
                         },
                       ),
                     ],
@@ -127,16 +198,86 @@ class MyApp extends StatelessWidget {
                   child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SkillLine(skill: 'Flutter', percentage: 0.8),
+                      SkillLine(skill: 'Programming', percentage: 0.9),
                       SizedBox(height: 5),
-                      SkillLine(skill: 'Dart', percentage: 0.75),
+                      SkillLine(skill: 'Mathematics', percentage: 0.7),
                       SizedBox(height: 5),
-                      SkillLine(skill: 'JavaScript', percentage: 0.7),
+                      SkillLine(skill: 'Social Skills', percentage: 0.8),
                       SizedBox(height: 5),
-                      SkillLine(skill: 'Python', percentage: 0.65),
+                      SkillLine(skill: 'Sports', percentage: 0.75),
+                      SizedBox(height: 5),
+                      SkillLine(skill: 'Leadership Skills', percentage: 0.8),
                     ],
                   ),
                 ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Center(
+                        child: Text(
+                          'My Brands',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      const Divider(
+                        color: Colors.white38,
+                        thickness: 1,
+                        indent: 50,
+                        endIndent: 50,
+                      ),
+                      const SizedBox(height: 10),
+                      GridView.count(
+                        shrinkWrap: true,
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              'https://tmsachith.github.io/img/tmsachith.jpg',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              'https://tmsachith.github.io/img/helroundex%20Lanka.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              'https://tmsachith.github.io/img/texttomp3.webp',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              'https://tmsachith.github.io/img/bookfree.jpg',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.network(
+                              'https://tmsachith.github.io/img/helroundex%20store.jpg',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
